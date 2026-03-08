@@ -1,0 +1,243 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    background-color: var(--bg-secondary);
+}
+
+.toolbar {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    padding: 8px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    z-index: 50;
+    gap: 4px;
+}
+
+.toolBtn {
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.toolBtn:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.activeTool {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.activeTool:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.board {
+    flex: 1;
+    cursor: default;
+}
+
+.drawingMode {
+    cursor: crosshair;
+}
+
+.linkingMode {
+    cursor: pointer;
+}
+
+.card {
+    width: auto;
+    min-width: 160px;
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    border-color: var(--text-tertiary);
+}
+
+.cardHeader {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-secondary);
+}
+
+.dragHandle {
+    width: 40px;
+    height: 4px;
+    background-color: var(--border-strong);
+    border-radius: 2px;
+}
+
+.cardActions {
+    display: flex;
+    gap: 4px;
+}
+
+.actionBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+    transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.linkingFrom {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+.linkTarget {
+    cursor: pointer;
+    border-color: var(--accent-blue);
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.linkTarget:hover {
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+.cardContent {
+    padding: 20px;
+}
+
+.textArea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    color: var(--text-primary);
+    outline: none;
+    resize: none;
+}
+
+.imageContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.uploadLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 32px;
+    cursor: pointer;
+    color: var(--text-tertiary);
+    font-size: 13px;
+    font-weight: 500;
+    width: 100%;
+    transition: color 0.2s ease;
+}
+
+.uploadLabel:hover {
+    color: var(--text-primary);
+}
+
+.uploadIcon {
+    opacity: 0.5;
+}
+
+.fileInput {
+    display: none;
+}
+
+.resizeHandle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    cursor: nwse-resize;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 20;
+}
+
+.resizeHandle::after {
+    content: '';
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--text-tertiary);
+    border-bottom: 2px solid var(--text-tertiary);
+}
+
+.card:hover .resizeHandle {
+    opacity: 1;
+}
+
+.svgLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.animatePath {
+    transition: d 0.2s ease;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: var(--border-color);
+    align-self: center;
+    margin: 0 4px;
+}
+
+.bgGrid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--border-strong) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.1;
+    pointer-events: none;
+}

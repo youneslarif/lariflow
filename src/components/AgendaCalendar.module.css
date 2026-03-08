@@ -1,0 +1,183 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-primary);
+    padding: 32px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.monthSelector {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.monthTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    min-width: 200px;
+    letter-spacing: -0.02em;
+}
+
+.iconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+    transition: all 0.2s ease;
+}
+
+.iconBtn:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    flex: 1;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    gap: 1px;
+    /* Divider effect */
+}
+
+.weekdayHeading {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: var(--bg-secondary);
+}
+
+.dayCellEmpty {
+    background-color: transparent;
+}
+
+.dayCell {
+    background-color: var(--bg-primary);
+    padding: 12px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.dayCell:hover {
+    background-color: var(--bg-secondary);
+}
+
+.dayHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.dayNumber {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.addButton {
+    opacity: 0;
+    color: var(--text-tertiary);
+    transition: opacity 0.2s ease;
+}
+
+.dayCell:hover .addButton {
+    opacity: 1;
+}
+
+.goalsList {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-y: auto;
+}
+
+.goalItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-primary);
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.goalTitle {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deleteGoalBtn {
+    opacity: 0;
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.goalItem:hover .deleteGoalBtn {
+    opacity: 1;
+}
+
+.deleteGoalBtn:hover {
+    color: var(--accent-red);
+    background-color: rgba(255, 59, 48, 0.1);
+}
+
+.goalItem.completed {
+    opacity: 0.5;
+}
+
+.goalItem.completed .goalTitle {
+    text-decoration: line-through;
+}
+
+.goalCheckbox {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid var(--text-tertiary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    flex-shrink: 0;
+}
+
+.goalItem.completed .goalCheckbox {
+    background-color: var(--text-secondary);
+    border-color: var(--text-secondary);
+    color: white;
+}

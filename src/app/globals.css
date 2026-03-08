@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* MASTERCLASS V7: SOFT MINESSET */
+
+  /* Palette: "Cloud & Sand" - Warm, organic, low-contrast */
+  --bg-primary: #fafaf9;
+  /* Warm off-white */
+  --bg-secondary: #f4f4f0;
+  /* Muted paper clay */
+  --bg-tertiary: #ededec;
+
+  --text-primary: #2d2d2d;
+  /* Soft charcoal, not black */
+  --text-secondary: #6b6b6b;
+  --text-tertiary: #a1a1a1;
+
+  /* Accent Colors: Muted Earth Tones */
+  --accent-blue: #5b85d9;
+  --accent-red: #d97b7b;
+  --accent-orange: #d9a37b;
+  --accent-green: #7bd9a3;
+
+  /* Hairline structure - Minimal visual weight */
+  --border-color: rgba(0, 0, 0, 0.05);
+  --border-strong: rgba(0, 0, 0, 0.1);
+
+  /* Zero Shadows for pure flat softness */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-float: none;
+
+  --bg-glass: rgba(250, 250, 249, 0.8);
+
+  /* Soft Radii - Smooth and approachable */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-xl: 40px;
+  --radius-full: 9999px;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --sidebar-width: 260px;
+}
+
+:root[data-theme='dark'] {
+  /* SOFT MINIMAL DARK: Muted Slate */
+  --bg-primary: #1c1c1e;
+  --bg-secondary: #2c2c2e;
+  --bg-tertiary: #3a3a3c;
+
+  --text-primary: #e5e5e7;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+
+  --accent-blue: #63a4ff;
+  --accent-red: #ff8a80;
+  --accent-orange: #ffd180;
+  --accent-green: #b9f6ca;
+
+  --border-color: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.1);
+
+  --bg-glass: rgba(28, 28, 30, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Fluid Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
